@@ -91,7 +91,6 @@ CONFIG(debug, debug|release) {
 include(lib/warnings.pri)
 include(lib/libcommuni.pri)
 include(lib/websocketpp.pri)
-include(lib/wintoast.pri)
 include(lib/signals.pri)
 include(lib/settings.pri)
 include(lib/serialize.pri)
@@ -131,7 +130,6 @@ SOURCES += \
     src/common/ChatterSet.cpp \
     src/common/CompletionModel.cpp \
     src/common/Credentials.cpp \
-    src/common/DownloadManager.cpp \
     src/common/Env.cpp \
     src/common/LinkParser.cpp \
     src/common/Modes.cpp \
@@ -347,7 +345,6 @@ HEADERS += \
     src/common/CompletionModel.hpp \
     src/common/ConcurrentMap.hpp \
     src/common/Credentials.hpp \
-    src/common/DownloadManager.hpp \
     src/common/Env.hpp \
     src/common/FlagsEnum.hpp \
     src/common/IrcColors.hpp \

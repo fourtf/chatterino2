@@ -3,6 +3,7 @@
 #include "Application.hpp"
 #include "common/Singleton.hpp"
 
+#include <QLayout>
 #include <pajlada/settings/setting.hpp>
 
 namespace chatterino {
@@ -25,11 +26,11 @@ public:
         const pajlada::Settings::Setting<int> &reaction);
     static std::map<ToastReaction, QString> reactionToString;
 
-    static bool isEnabled();
+    void sendToastMessage(const QString &channelName);
 
 private:
-#ifdef Q_OS_WIN
-    void sendWindowsNotification(const QString &channelName, Platform p);
-#endif
+    void actuallySendToastMessage(const QUrl &url, const QString &channelName);
+    QHBoxLayout *makeLayout(const QPixmap &image, const QString &text,
+                            const QString &bottomText);
 };
 }  // namespace chatterino

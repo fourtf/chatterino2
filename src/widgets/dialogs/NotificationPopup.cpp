@@ -2,10 +2,12 @@
 
 #include "common/Channel.hpp"
 #include "messages/Message.hpp"
+#include "singletons/Settings.hpp"
 #include "widgets/helper/ChannelView.hpp"
 
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QLabel>
 #include <QScreen>
 
 #include <QVBoxLayout>
@@ -13,19 +15,14 @@
 namespace chatterino {
 
 NotificationPopup::NotificationPopup()
-    : BaseWindow(BaseWindow::Frameless)
-    , channel_(std::make_shared<Channel>("notifications", Channel::Type::None))
-
+    : BaseWindow(BaseWindow::TopMost)
 {
-    this->channelView_ = new ChannelView(this);
+    this->setWindowFlags(
+        Qt::FramelessWindowHint | Qt::X11BypassWindowManagerHint |
+        Qt::BypassWindowManagerHint | Qt::WindowStaysOnTopHint);
+    this->setWindowOpacity(0.95);
 
-    auto *layout = new QVBoxLayout(this);
-    this->setLayout(layout);
-
-    layout->addWidget(this->channelView_);
-
-    this->channelView_->setChannel(this->channel_);
-    this->setScaleIndependantSize(300, 150);
+    this->setScaleIndependantSize(360, 133);
 }
 
 void NotificationPopup::updatePosition()
@@ -45,9 +42,11 @@ void NotificationPopup::updatePosition()
     }
 }
 
-void NotificationPopup::addMessage(MessagePtr msg)
+void NotificationPopup::mouseReleaseEvent(QMouseEvent *event)
 {
-    this->channel_->addMessage(std::move(msg));
+    mouseRelease.invoke(event);
+    BaseWindow::mouseReleaseEvent(event);
+    //this->channel_->addMessage(std::move(msg));
 
     //    QTimer::singleShot(5000, this, [this, msg] { this->channel->remove });
 }
