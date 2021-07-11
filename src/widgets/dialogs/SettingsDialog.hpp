@@ -60,6 +60,7 @@ private:
 
     void onOkClicked();
     void onCancelClicked();
+    virtual void addShortcuts() override;
 
     struct {
         QWidget *tabContainerContainer{};

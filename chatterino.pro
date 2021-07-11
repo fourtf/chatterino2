@@ -159,6 +159,9 @@ SOURCES += \
     src/controllers/highlights/HighlightModel.cpp \
     src/controllers/highlights/HighlightPhrase.cpp \
     src/controllers/highlights/UserHighlightModel.cpp \
+    src/controllers/hotkeys/Hotkey.cpp \
+    src/controllers/hotkeys/HotkeyController.cpp \
+    src/controllers/hotkeys/HotkeyModel.cpp \
     src/controllers/ignores/IgnoreModel.cpp \
     src/controllers/moderationactions/ModerationAction.cpp \
     src/controllers/moderationactions/ModerationActionModel.cpp \
@@ -265,6 +268,7 @@ SOURCES += \
     src/widgets/dialogs/BadgePickerDialog.cpp \
     src/widgets/dialogs/ChannelFilterEditorDialog.cpp \
     src/widgets/dialogs/ColorPickerDialog.cpp \
+    src/widgets/dialogs/EditHotkeyDialog.cpp \
     src/widgets/dialogs/EmotePopup.cpp \
     src/widgets/dialogs/IrcConnectionEditor.cpp \
     src/widgets/dialogs/LastRunCrashDialog.cpp \
@@ -387,6 +391,11 @@ HEADERS += \
     src/controllers/highlights/HighlightModel.hpp \
     src/controllers/highlights/HighlightPhrase.hpp \
     src/controllers/highlights/UserHighlightModel.hpp \
+    src/controllers/hotkeys/Hotkey.hpp \
+    src/controllers/hotkeys/HotkeyController.hpp \
+    src/controllers/hotkeys/ActionNames.hpp \
+    src/controllers/hotkeys/HotkeyModel.hpp \
+    src/controllers/hotkeys/HotkeyScope.hpp \
     src/controllers/ignores/IgnoreController.hpp \
     src/controllers/ignores/IgnoreModel.hpp \
     src/controllers/ignores/IgnorePhrase.hpp \
@@ -526,6 +535,7 @@ HEADERS += \
     src/widgets/dialogs/BadgePickerDialog.hpp \
     src/widgets/dialogs/ChannelFilterEditorDialog.hpp \
     src/widgets/dialogs/ColorPickerDialog.hpp \
+    src/widgets/dialogs/EditHotkeyDialog.hpp \
     src/widgets/dialogs/EmotePopup.hpp \
     src/widgets/dialogs/IrcConnectionEditor.hpp \
     src/widgets/dialogs/LastRunCrashDialog.hpp \
@@ -601,7 +611,8 @@ RESOURCES += \
 DISTFILES +=
 
 FORMS += \
-    src/widgets/dialogs/IrcConnectionEditor.ui
+    src/widgets/dialogs/IrcConnectionEditor.ui \
+    src/widgets/dialogs/EditHotkeyDialog.ui  
 
 # do not use windows min/max macros
 #win32 {

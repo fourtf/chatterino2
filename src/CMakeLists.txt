@@ -88,6 +88,15 @@ set(SOURCE_FILES
         controllers/highlights/UserHighlightModel.cpp
         controllers/highlights/UserHighlightModel.hpp
 
+        controllers/hotkeys/Hotkey.cpp
+        controllers/hotkeys/Hotkey.hpp
+        controllers/hotkeys/HotkeyController.cpp
+        controllers/hotkeys/HotkeyController.hpp
+        controllers/hotkeys/ActionNames.hpp
+        controllers/hotkeys/HotkeyModel.cpp
+        controllers/hotkeys/HotkeyModel.hpp
+        controllers/hotkeys/HotkeyScope.hpp
+
         controllers/ignores/IgnoreModel.cpp
         controllers/ignores/IgnoreModel.hpp
 
@@ -332,6 +341,8 @@ set(SOURCE_FILES
         widgets/dialogs/ChannelFilterEditorDialog.hpp
         widgets/dialogs/ColorPickerDialog.cpp
         widgets/dialogs/ColorPickerDialog.hpp
+        widgets/dialogs/EditHotkeyDialog.cpp
+        widgets/dialogs/EditHotkeyDialog.hpp
         widgets/dialogs/EmotePopup.cpp
         widgets/dialogs/EmotePopup.hpp
         widgets/dialogs/IrcConnectionEditor.cpp
