@@ -128,6 +128,7 @@ public:
     void autoModDeny(const QString msgID, ChannelPtr channel);
 
 private:
+    void loadKrakenEmotes();
     void loadEmoteSetData(std::shared_ptr<EmoteSet> emoteSet);
 
     QString oauthClient_;
